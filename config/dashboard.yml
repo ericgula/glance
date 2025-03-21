@@ -1,0 +1,10 @@
+- name: Dashboard
+  columns:
+    - size: small
+      widgets:
+        - type: clock
+        - type: weather
+          location: Bethlehem, Pennsylvania, USA
+    - size: full
+      widgets:
+        - type: docker-containers

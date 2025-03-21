@@ -1,0 +1,105 @@
+- name: Status
+  columns:
+    - size: full
+      widgets:
+        - type: html
+          title: Auto Refresh
+          content: |
+            <div id="refresh-indicator" style="text-align: center; font-size: 12px; opacity: 0.7;">
+              Page will refresh in 5:00
+            </div>
+            <script>
+              // Set refresh interval in milliseconds (5 minutes)
+              const refreshInterval = 300000;
+              
+              // Set up page refresh
+              setTimeout(() => {
+                window.location.reload();
+              }, refreshInterval);
+              
+              // Update countdown timer
+              let timeLeft = refreshInterval / 1000;
+              setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                const display = document.getElementById('refresh-indicator');
+                display.textContent = `Page will refresh in ${minutes}:${seconds.toString().padStart(2, '0')}`;
+                timeLeft--;
+              }, 1000);
+            </script>
+        
+        - type: html
+          title: Microsoft 365 Status
+          content: |
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">Microsoft 365</h3>
+                <a href="https://status.office.com" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">Exchange Online</h3>
+                <a href="https://status.office365.com/#/servicehealth" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">SharePoint Online</h3>
+                <a href="https://status.office365.com/#/servicehealth" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">Microsoft Teams</h3>
+                <a href="https://status.office365.com/#/servicehealth" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+            </div>
+        
+        - type: iframe
+          title: Microsoft 365 Status Page
+          source: https://status.office.com
+          height: 400
+          allow-scroll: true
+          
+        - type: html
+          title: Business Services Status
+          content: |
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">Freshservice</h3>
+                <a href="https://status.freshservice.com" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">Bullhorn</h3>
+                <a href="https://status.bullhorn.com" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">RingCentral</h3>
+                <a href="https://status.ringcentral.com" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+              <div style="flex: 1; min-width: 200px; background: #222; padding: 10px; border-radius: 5px;">
+                <h3 style="margin-top: 0">Slack</h3>
+                <a href="https://status.slack.com" target="_blank" style="color: var(--primary);">Check Status Page →</a>
+              </div>
+            </div>
+            
+    - size: full
+      widgets:
+        - type: iframe
+          title: Freshservice Status
+          source: https://status.freshservice.com
+          height: 400
+          allow-scroll: true
+        
+        - type: iframe
+          title: Bullhorn Status
+          source: https://status.bullhorn.com
+          height: 400
+          allow-scroll: true
+        
+        - type: iframe
+          title: RingCentral Status
+          source: https://status.ringcentral.com
+          height: 400
+          allow-scroll: true
+        
+        - type: iframe
+          title: Slack Status
+          source: https://status.slack.com
+          height: 400
+          allow-scroll: true 
